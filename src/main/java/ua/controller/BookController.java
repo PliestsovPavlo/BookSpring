@@ -55,7 +55,7 @@ public class BookController {
 	public String show(Model model, @PageableDefault Pageable pageable){
 		model.addAttribute("books", bookService.findAll(pageable));
 		model.addAttribute("authors", authorService.findAll());
-		model.addAttribute("categories", categoryService.findAll(pageable));
+		model.addAttribute("categories", categoryService.findAll());
 		return "book";
 	}
 	
