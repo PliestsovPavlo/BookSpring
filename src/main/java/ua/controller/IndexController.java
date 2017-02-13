@@ -39,9 +39,11 @@ public class IndexController {
 	}
 	
 	@GetMapping("/user")
-	public String userPage(Model model){
+	public String userPage(Model model, @PageableDefault Pageable pageable){
 		model.addAttribute("user", getPrincipal());
-		return "/user";
+		model.addAttribute("books", bookService.findAll(pageable));
+
+		return "index";
 	}
 	
 	@GetMapping("/login")

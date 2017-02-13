@@ -17,15 +17,16 @@
 		<a href="/">Home</a>
 		<a href="<c:url value="/logout" />">Logout</a>		
 <form:form>
-
+${user}
 <c:forEach items="${books.content}" var="book">
 				<div class="row">
 					<div class="col-md-2 col-xs-2">${book.title}</div>
 					<div class="col-md-2 col-xs-2">${book.author.lastName}</div>
 					<div class="col-md-2 col-xs-2">${book.category.nameOfCategory}</div>
-					<div class="col-md-2 col-xs-2">${book.price}</div>
-					<div class="col-md-2 col-xs-2"><a class="btn btn-warning" href="/admin/book/update/${book.id}<custom:allParams/>">update</a></div>
+					<div class="col-md-2 col-xs-2">${book.price}</div><br><br>
+<!--					<div class="col-md-2 col-xs-2"><a class="btn btn-warning" href="/admin/book/update/${book.id}<custom:allParams/>">update</a></div>
 					<div class="col-md-2col-xs-2"><a class="btn btn-danger" href="/admin/book/delete/${book.id}<custom:allParams/>">delete</a></div>
+-->
 				</div>
 			</c:forEach>
 
